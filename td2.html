@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercices HTML5</title>
+</head>
+<body>
+
+  <!-- Exercice 1 -->
+  <h2> Formulaire</h2>
+  <form>
+    <label>Email:</label><br>
+    <input type="text"><br><br>
+
+    <label>Pseudo:</label><br>
+    <input type="text" pattern="[a-zA-Z0-9]{3,8}"><br><br>
+
+    <label>Mot de Passe:</label><br>
+    <input type="password" pattern="[a-zA-Z0-9]{5}"><br><br>
+    <label for="">Le taux de remplissage du formulaire est de 20%:</label><br>
+    <progress value="20" max="100" style="height: 60px;  width: 350px;"></progress><br><br>
+    <button style="width: 15%; margin-left: 50px;">LOGIN</button>
+  </form>
+
+  <hr>
+
+  <!-- Exercice 2 -->
+
+  <!-- part1 -->
+<!-- i'll use online photos so its easier to find them,that's for u frog -->
+
+   <H2>1-HTML + PHP logo</H2>
+  <svg width="300" height="150" style="border: 1px solid black;">
+  
+  <image 
+    x="20" y="20" 
+    width="60" height="60" 
+    href="https://tse3.mm.bing.net/th/id/OIP.7rwMEjcw2fwJgJJivM6CVAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+    alt="HTML5 Logo"
+  />
+  <text x="20" y="100" font-size="12" fill="black">Fig1: HTML5</text>
+  
+  
+  <image 
+    x="220" y="70" 
+    width="60" height="60" 
+    href="https://tse2.mm.bing.net/th/id/OIP.REA_HuzmfIkqDGpnkdpa1AHaD_?rs=1&pid=ImgDetMain&o=7&rm=3" 
+    alt="PHP Logo"
+  />
+  <text x="220" y="140" font-size="12" fill="black">Fig2: PHP</text>
+
+</svg>
+  <hr>
+
+
+  <!-- part2 -->
+<H2> 2-HTML + PHP logo</H2>
+<svg width="300" height="150" style="border: 1px solid black;">
+ 
+  <image 
+    x="20" y="20" 
+    width="60" height="60" 
+    href="https://tse3.mm.bing.net/th/id/OIP.7rwMEjcw2fwJgJJivM6CVAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+    alt="HTML5 Logo"
+    
+   
+    transform="rotate(45 50 50)"
+  />
+  </svg>
+  <canvas id="canvas2" width="500" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas2');
+    const ctx = canvas.getContext('2d');
+
+    const html5Logo = new Image();
+    const phpLogo = new Image();
+
+    html5Logo.src = "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg";
+    phpLogo.src = "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg";
+
+    html5Logo.onload = () => {
+      ctx.save();
+      ctx.translate(150, 100);
+      // uncoment the next line to rotate
+      //ctx.rotate(45 * Math.PI / 180);
+      ctx.drawImage(html5Logo, -40, -40, 80, 80);
+      ctx.restore();
+
+      ctx.fillStyle = "#000";
+      ctx.font = "14px Arial";
+      ctx.fillText("Fig 1 : HTML5", 110, 180);
+    };
+
+    phpLogo.onload = () =>{
+      ctx.drawImage(phpLogo, 300, 150, 80, 80);
+      ctx.fillStyle = "#000";                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+      ctx.font = "14px Arial";
+      ctx.fillText("Fig 2 : PHP", 310, 250);
+    } 
+  </script>
+
+<hr>
+  <!-- Exercice 3 -->
+  <h2> Rectangle SVG</h2>
+  <!-- welp,this one was annoying to get ,who knew? -->
+     <!-- not very sure about this one -->
+
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="280" height="130" fill="white" stroke="black" stroke-width="2" rx="10" ry="10" />
+
+  <rect x="90" y="45" width="120" height="60" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
+
+  <a href="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" target="_blank">
+    <text x="150" y="75" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="black" font-weight="bold">
+      RECTANGLE
+    </text>
+  </a>
+</svg>
+  <hr>
+
+  <!-- Exercice 4  this one is wrong,use js-->
+  <h2> SVG dans Canvas</h2>
+  <svg width="300" height="100" style="border:1px solid black;">
+  <video 
+    x="20" y="20" 
+    width="60" height="60" 
+    href="https://youtube.com/shorts/HnSX0Z0qCUM?si=cAusa4rdSxoUx4Nf" 
+    
+  />
+              <text  x="150" y="75" font-size="15" text-anchor="middle" dominant-baseline="middle" fill="black" font-weight="bold">Sorry ,but this simply couldn't work....:)</text>
+
+  </svg>
+
+  <hr>
+ <!-- Exercice 5 -->
+<h2> Drapeau algerien simplifie</h2>
+<svg width="300" height="150" style="border: 2px solid black;">
+  <!-- Green half -->
+  <rect x="0" y="0" width="150" height="150" fill="green" />
+  
+  <!-- White half -->
+  <rect x="150" y="0" width="150" height="150" fill="white" />
+  
+  <!-- Red crescent (centered) this is the best i could do,i failed........ -->
+ <path d="M150,75 
+         A30,30 0 1,1 150,74 
+         A20,20 0 1,0 150,76" 
+      fill="red" />
+
+  <!-- Red star (centered) -->
+  <polygon points="
+    150,60 
+    155,72 
+    168,72 
+    158,80 
+    162,92 
+    150,85 
+    138,92 
+    142,80 
+    132,72 
+    145,72" 
+    fill="red" />
+</svg>
+
+  <hr>
+
+  <!-- Exercice 6 -->
+  <h2> SVG avec gradient et cercle</h2>
+  
+  <svg width="300" height="150" style="border: 2px solid black;">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(31, 208, 31);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(124, 167, 124);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="50" y="25" width="200" height="100" fill="url(#grad1)" />
+  <circle cx="150" cy="75" r="30" fill="yellow" />
+</svg>
+
+  <hr>
+
+  <!-- Exercice 7 -->
+  <h2> Figure pleine</h2>
+  <svg width="150" height="150">
+  <!-- This is the upside-down right-angled triangle,
+       where the height is on the right side.
+       
+       Vertices:
+       1. (10, 10): Top-left corner
+       2. (140, 10): Top-right corner (base)
+       3. (140, 140): Bottom-right corner (height)
+  -->
+  <polygon points="10,10 140,10 140,140" fill="black" />
+</svg>
+<svg width="300" height="300" style="border: 1px solid black;">
+  <!-- Upside-down right-angled triangle, scaled up -->
+  <polygon points="20,20 280,20 280,280" fill="black" />
+</svg>
+<svg width="300" height="300" style="border: 1px solid black;">
+  <!-- Big black triangle -->
+  <polygon points="20,20 280,20 280,280" fill="black" />
+
+  <!-- Bigger white rectangle cutting into the base -->
+  <rect x="70" y="20" width="100" height="40" fill="white" />
+</svg>
+
+
+
+  <hr>
+
+  <!-- Exercice 8 -->
+  <h2> Rotation de rectangle</h2>
+  <svg width="200" height="150">
+    <g transform="rotate(30 100 75)">
+      <rect x="70" y="50" width="60" height="40" fill="gray" />
+    </g>
+  </svg>
+
+</body>
+</html>
